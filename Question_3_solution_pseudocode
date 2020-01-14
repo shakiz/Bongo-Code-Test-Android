@@ -1,0 +1,26 @@
+Play video pseudocode:
+
+MediaController mediaController= new MediaController(context);
+mediaController.setAnchorView(instance_of_videoVIew);
+Uri uri = Uri.parse("directory" + fileName);
+instance_of_videoVIew.setMediaController(mediaController);
+instance_of_videoVIew.setVideoURI(uri);
+instance_of_videoVIew.start();
+
+Forward pseudocode:
+
+if video_player isShowing then
+	currentPos = video_player.getCurrentPos();
+	if currentPos+timeToSeek <= videoDuration then
+		player.seekTo(currentPos+timeToSeek)
+	else then
+		player.seekTo(videoDuration)
+		
+Rewind pseudocode:
+
+if video_player isShowing then
+	currentPos = video_player.getCurrentPos();
+	if currentPos-timeToSeek <= 0 then
+		player.seekTo(currentPos-timeToSeek)
+	else then
+		player.seekTo(0)
